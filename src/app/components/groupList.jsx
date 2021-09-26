@@ -58,15 +58,15 @@ const GroupList = ({
             <ul className="list-group">
                 {items.map((item) => (
                     <li
-                        key={items[item][valueProperty]}
+                        key={item._id}
                         className={
                             "list-group-item" +
-                            (items[item] === selectedItem ? " active" : "")
+                            (item === selectedItem ? " active" : "")
                         }
-                        onClick={() => onItemSelect(items[item])}
+                        onClick={() => onItemSelect(items)}
                         role="button"
                     >
-                        {items[item][contentProperty]}
+                        {item.name}
                     </li>
                 ))}
             </ul>
